@@ -12,12 +12,12 @@ const Navbar: React.FC = () => {
   const navLink: NavLink[] = [
     { name: "خانه", href: "/" },
     { name: "ترند وشه", href: "trends" },
-    { name: "باکس vip", href: "/" },
-    { name: "باکس گل", href: "/" },
-    { name: "دسته گل ها", href: "/" },
-    { name: " کیک و بادکنک", href: "/" },
-    { name: " دسته گل vip ", href: "/" },
-    { name: " دسته گل عروس ", href: "/" },
+    { name: "باکس vip", href: "vipBox" },
+    { name: "باکس گل", href: "flowerBox" },
+    { name: "دسته گل ها", href: "" },
+    { name: " کیک و بادکنک", href: "" },
+    { name: " دسته گل vip ", href: "" },
+    { name: " دسته گل عروس ", href: "" },
   ];
 
   return (
