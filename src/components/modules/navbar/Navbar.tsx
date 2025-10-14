@@ -15,8 +15,8 @@ const Navbar: React.FC = () => {
     { name: "باکس vip", href: "vipBox" },
     { name: "باکس گل", href: "flowerBox" },
     { name: "دسته گل ها", href: "bouquets" },
-    { name: " کیک و بادکنک", href: "" },
-    { name: " دسته گل vip ", href: "" },
+    { name: " کیک و بادکنک", href: "pastries" },
+    { name: " دسته گل vip ", href: "vipBouquets" },
     { name: " دسته گل عروس ", href: "" },
   ];
 
