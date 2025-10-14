@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -8,9 +9,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "0.5rem", // 👈 فقط نیم رِم فاصله
+          sm: "0.5rem",
+          lg: "1rem",
+          xl: "1rem",
+        },
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        textcolor: "#222",
       },
       fontFamily: {
         shabnam: ["Shabnam", "sans-serif"],
@@ -22,7 +31,12 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    }),
+  ],
 };
 
 export default config;
