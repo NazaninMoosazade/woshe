@@ -1,4 +1,13 @@
 import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "استودیو گل وشه",
+  description: "وب‌سایت رسمی استودیو گل وشه",
+    icons: {
+    icon: "/icon/favicon.ico",
+  }, 
+};
 
 export default function RootLayout({
   children,
