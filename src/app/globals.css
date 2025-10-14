@@ -7,21 +7,26 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Shabnam';
+  src: url('/fonts/shabnam/Shabnam-Light.woff2') format('woff2'),
+       url('/fonts/shabnam/Shabnam-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'Shabnam';
+  src: url('/fonts/shabnam/Shabnam-Medium.woff2') format('woff2'),
+       url('/fonts/shabnam/Shabnam-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+  font-family: 'Shabnam';
+  src: url('/fonts/shabnam/Shabnam-Bold.woff2') format('woff2'),
+       url('/fonts/shabnam/Shabnam-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
 }

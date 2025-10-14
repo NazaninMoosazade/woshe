@@ -12,8 +12,17 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        shabnam: ["Shabnam", "sans-serif"],
+      },
+      fontWeight: {
+        light: "300",
+        medium: "500",
+        bold: "700",
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
