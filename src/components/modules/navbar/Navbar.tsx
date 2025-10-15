@@ -1,9 +1,8 @@
-'use client'
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { PiUserLight } from "react-icons/pi";
-import { PiBagLight } from "react-icons/pi";
+import NavbarIcons from "./NavbarIcons";
 
 const Navbar: React.FC = () => {
   interface NavLink {
@@ -37,16 +36,15 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   return (
     <>
-       <header
-      className={`fixed top-0 w-full z-[981] h-32 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-[20px] shadow-[0_0_0_1px_rgba(0,0,0,0.05)]"
-          : "bg-white"
-      }`}
-    >
+      <header
+        className={`fixed top-0 w-full z-[981] h-32 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-[20px] shadow-[0_0_0_1px_rgba(0,0,0,0.05)]"
+            : "bg-white"
+        }`}
+      >
         <nav className="container">
           <div className="flex items-center justify-between mt-4 font-shabnam">
             <Link href="/">
@@ -81,11 +79,7 @@ const Navbar: React.FC = () => {
                 </li>
               ))}
             </ul>
-
-            <div className="flex gap-x-5 text-textcolor">
-              <PiUserLight className="w-7 h-7" />
-              <PiBagLight className="w-7 h-7" />
-            </div>
+            <NavbarIcons />
           </div>
         </nav>
       </header>

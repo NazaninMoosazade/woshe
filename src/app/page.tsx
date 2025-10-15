@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/modules/navbar/Navbar";
 import BoxItem from "@/components/tamplates/boxItem/BoxItem";
 import SectionBanner from "@/components/modules/sectionBanner/SectionBanner";
+import ProductsPage from "./products/page";
 
 interface Category {
   name: string;
@@ -67,6 +68,7 @@ const Page: React.FC = () => {
           ))}
         </div>
         <SectionBanner />
+      <ProductsPage/>
       </div>
       <br />
       <br />

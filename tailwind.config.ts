@@ -20,6 +20,8 @@ const config: Config = {
       },
       colors: {
         textcolor: "#222",
+        green: '#5b775e',
+        bg: '#fafaf9'
       },
       fontFamily: {
         shabnam: ["Shabnam", "sans-serif"],
