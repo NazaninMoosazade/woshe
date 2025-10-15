@@ -23,6 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         shabnam: ["Shabnam", "sans-serif"],
+        theNautigal: ["TheNautigal" , "sans-serif"]
       },
       fontWeight: {
         light: "300",

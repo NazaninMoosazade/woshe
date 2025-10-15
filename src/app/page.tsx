@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/modules/navbar/Navbar";
 import BoxItem from "@/components/tamplates/boxItem/BoxItem";
+import SectionBanner from "@/components/modules/sectionBanner/SectionBanner";
 
 interface Category {
   name: string;
@@ -26,26 +27,26 @@ const categories: Category[] = [
     name: " دسته گل vip",
     subtitle: "VIP BOUQUETS",
     href: "/vipBouquets",
-    image: "/icon/site-580-1000-trend.webp",
+    image: "/img/site-580-1000-trend.webp",
   },
 
   {
     name: " دسته گل ها ",
     subtitle: "BOUQUETS",
     href: "/bouquets",
-    image: "/icon/site-580-1000-trend.webp",
+    image: "/img/site-580-1000-trend.webp",
   },
-    {
-    name: "کیک و بادکنک"  ,
+  {
+    name: "کیک و بادکنک",
     subtitle: "PASTRIES",
     href: "/pastries",
-    image: "/icon/site-580-1000-trend.webp",
+    image: "/img/site-580-1000-trend.webp",
   },
-    {
-    name: "دسته گل عروس"  ,
+  {
+    name: "دسته گل عروس",
     subtitle: "VIP BOUQUETS",
     href: "/vipBouquets",
-    image: "/icon/site-580-1000-trend.webp",
+    image: "/img/site-580-1000-trend.webp",
   },
 ];
 
@@ -65,7 +66,18 @@ const Page: React.FC = () => {
             />
           ))}
         </div>
+        <SectionBanner />
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };

@@ -13,14 +13,14 @@ const trendsBoxes: Product[] = [
   {
     name: "محصول ترند ۱",
     subtitle: "Trend Product 1",
-    href: "/trends/product1",
-    image: "/images/products/trend1.jpg",
+    href: '/trends/product2',
+     image: "/img/site-580-1000-trend.webp",
   },
   {
     name: "محصول ترند ۲",
     subtitle: "Trend Product 2",
     href: "/trends/product2",
-    image: "/images/products/trend2.jpg",
+       image: "/img/site-580-1000-trend.webp",
   },
   // سایر محصولات
 ];

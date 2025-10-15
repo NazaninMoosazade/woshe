@@ -30,6 +30,13 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: 'TheNautigal';
+  src: url('/fonts/theNautigal/TheNautigal-Regular.ttf') format('ttf'),
+       url('/fonts/theNautigal/TheNautigal-Regular.ttf') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 
 .nav-link {
   @apply relative after:absolute after:left-1/2 after:-bottom-4 after:h-1.5 after:w-1.5 after:rounded-full after:bg-[#5b775e] after:opacity-0 after:translate-x-[-50%] after:transition-all after:duration-300;
