@@ -58,6 +58,5 @@ export const validatePhone = (phone: string): boolean => {
   return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(phone);
 };
 
-export const validatePassword = (password: string): boolean => {
-  return /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$/.test(password);
-};
+// export const validatePassword = (password: string) =>
+//   /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!@$%^&*-]).{8,}$/.test(password);
