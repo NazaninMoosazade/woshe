@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from '@/components/modules/navbar/Navbar'
+import Title from '@/components/tamplates/title/Title'
 
 const page = () => {
   return (
  <>
  <Navbar/>
- <h1>vipBouquets</h1>
+ <Title title='دسته گل vip'/>
  </>
   )
 }

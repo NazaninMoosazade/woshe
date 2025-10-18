@@ -5,7 +5,7 @@ import Link from "next/link";
 import { PiUserLight, PiBagLight } from "react-icons/pi";
 
 interface NavbarProps {
-  isLogin : boolean;
+  isLogin? : boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({isLogin}) => {

@@ -1,14 +1,14 @@
-
-import React from 'react'
-import Navbar from '@/components/modules/navbar/Navbar'
+import React from "react";
+import Navbar from "@/components/modules/navbar/Navbar";
+import Title from "@/components/tamplates/title/Title";
 
 const page = () => {
   return (
     <>
-    <Navbar/>
-    <h1>vip Box</h1>
+      <Navbar />
+      <Title title="باکس vip" />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
