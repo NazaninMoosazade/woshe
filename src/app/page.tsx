@@ -4,6 +4,7 @@ import BoxItem from "@/components/tamplates/boxItem/BoxItem";
 import SectionBanner from "@/components/modules/sectionBanner/SectionBanner";
 import ProductsPage from "./products/page";
 
+
 interface Category {
   name: string;
   subtitle?: string;
@@ -50,6 +51,7 @@ const categories: Category[] = [
     image: "/img/site-580-1000-trend.webp",
   },
 ];
+
 
 const Page: React.FC = () => {
   return (
