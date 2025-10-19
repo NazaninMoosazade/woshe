@@ -9,6 +9,7 @@ import Product from "@/models/Product";
 import connectToDB from "@/configs/mongodb";
 import CodeProducts from "@/components/tamplates/product/CodeProducts";
 import AddProduct from "@/components/tamplates/product/AddProduct";
+import BoxDetails from "@/components/tamplates/product/BoxDetails";
 
 interface PageProps {
   params: {
@@ -41,13 +42,26 @@ const Page = async ({ params }: PageProps) => {
 
           {/* Left section */}
           <div className="text-center md:text-right">
-            <CodeProducts productCode={productData.productCode}/>
+            <CodeProducts productCode={productData.productCode} />
             <TitleProduct name={productData.name} />
             <DescriptionProduct description={productData.description} />
             <PriceProduct price={productData.price} />
-            <AddProduct/>
+            <AddProduct />
+            <BoxDetails />
           </div>
         </div>
+
+    <div className="relative flex items-center my-10">
+  {/* <!-- خط سمت چپ --> */}
+  <div className="flex-grow border-t border-gray-300"></div>
+
+  {/* <!-- دایره وسط --> */}
+  <div className="mx-5 w-4 h-4 rounded-full border-2 border-gray-300"></div>
+
+  {/* <!-- خط سمت راست --> */}
+  <div className="flex-grow border-t border-gray-300"></div>
+</div>
+
       </section>
     </>
   );

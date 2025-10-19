@@ -21,7 +21,9 @@ const config: Config = {
       colors: {
         textcolor: "#222",
         green: '#5b775e',
-        bg: '#fafaf9'
+        bg: '#fafaf9',
+        bgLightBlue: '#d8eafc',
+        textBlue: '#1e87f0'
       },
       fontFamily: {
         shabnam: ["Shabnam", "sans-serif"],
