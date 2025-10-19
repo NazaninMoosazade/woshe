@@ -3,28 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { PiUserLight, PiBagLight } from "react-icons/pi";
+import NavbarLink from "./NavbarLink";
 
 interface NavbarProps {
-  isLogin? : boolean;
+  isLogin?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({isLogin}) => {
-  interface NavLink {
-    name: string;
-    href: string;
-  }
-
-  const navLink: NavLink[] = [
-    { name: "خانه", href: "/" },
-    { name: "ترند وشه", href: "trends" },
-    { name: "باکس vip", href: "vipBox" },
-    { name: "باکس گل", href: "flowerBox" },
-    { name: "دسته گل ها", href: "bouquets" },
-    { name: " کیک و بادکنک", href: "pastries" },
-    { name: " دسته گل vip ", href: "vipBouquets" },
-    { name: " دسته گل عروس ", href: "bridal" },
-  ];
-
+const Navbar: React.FC<NavbarProps> = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -74,15 +59,8 @@ const Navbar: React.FC<NavbarProps> = ({isLogin}) => {
                 ></path>
               </svg>
             </Link>
-            <ul className="flex items-center gap-x-9 text-textcolor">
-              {navLink.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="nav-link">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            
+            <NavbarLink />
 
             {/* icon */}
             <div className="flex items-center gap-x-7 relative text-textcolor">
@@ -90,8 +68,9 @@ const Navbar: React.FC<NavbarProps> = ({isLogin}) => {
               <div className="relative group">
                 <Link href={"login"}>
                   <PiUserLight className="w-7 h-7 cursor-pointer transition-colors duration-200" />
+
                   <div className="absolute top-full left-8 hidden -mt-5 group-hover:flex duration-200 bg-green text-white text-sm font-shabnam px-5 h-6 rounded-md shadow-lg whitespace-nowrap">
-                    {isLogin ? 'ورود' : 'خوش آمدید ! '}
+                    ورود
                   </div>
                 </Link>
               </div>

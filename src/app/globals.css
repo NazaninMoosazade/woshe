@@ -39,9 +39,15 @@
 }
 
 .nav-link {
-  @apply relative after:absolute after:left-1/2 after:-bottom-4 after:h-1.5 after:w-1.5 after:rounded-full after:bg-[#5b775e] after:opacity-0 after:translate-x-[-50%] after:transition-all after:duration-300;
+  @apply relative after:absolute after:left-1/2 after:-bottom-4 after:h-1.5 after:w-1.5 after:rounded-full after:bg-[#5b775e] after:opacity-0 after:-translate-x-1/2 after:transition-all after:duration-300;
 }
 
+/* دایره در hover */
 .nav-link:hover::after {
   @apply opacity-100;
+}
+
+/* دایره در حالت active (لینک فعلی) */
+.nav-link.active::after {
+  @apply opacity-100 bg-[#5b775e]; /* رنگ متفاوت برای active */
 }

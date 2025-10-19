@@ -52,13 +52,10 @@ const Page = async ({ params }: PageProps) => {
         </div>
 
         <div className="relative flex items-center my-10">
-          {/* <!-- خط سمت چپ --> */}
           <div className="flex-grow border-t border-gray-300"></div>
 
-          {/* <!-- دایره وسط --> */}
           <div className="mx-5 w-4 h-4 rounded-full border-2 border-gray-300"></div>
 
-          {/* <!-- خط سمت راست --> */}
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
       </section>
