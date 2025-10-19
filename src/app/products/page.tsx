@@ -9,7 +9,7 @@ const ProductsPage = () => {
           باکس گل
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          <BoxItem
+          {/* <BoxItem
             name="باکس رز قرمز"
             subtitle="با بسته‌بندی شیک"
             href="/products/red-rose-box"
@@ -25,7 +25,7 @@ const ProductsPage = () => {
             subtitle="مخصوص هدیه"
             href="/products/tulip-box"
             image="/images/tulip-box.jpg"
-          />
+          /> */}
         </div>
       </div>
     </section>

@@ -1,12 +1,9 @@
-import React from "react";
-
-function PriceProduct() {
-  return (
-    <div>
-      <p>قیمت</p>
-      <h1>25,800,000 تومان</h1>
-    </div>
-  );
+interface PriceProductProps {
+  price: number;
 }
+
+const PriceProduct: React.FC<PriceProductProps> = ({ price }) => {
+  return <p className="text-xl font-semibold text-red-600">{price.toLocaleString()} تومان</p>;
+};
 
 export default PriceProduct;
