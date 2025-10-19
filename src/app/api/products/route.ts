@@ -1,5 +1,5 @@
 import connectToDB from "@/configs/mongodb";
-import Product from "@/models/Product"; // مدل TypeScript که ساختیم
+import Product from "@/models/Product";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 
@@ -13,17 +13,15 @@ export async function POST(req: Request) {
     const productCode = formData.get("productCode") as string;
     const size = formData.get("size") as string;
     const description = formData.get("description") as string;
+    const category = formData.get("category") as string; 
     const imgFile = formData.get("img") as File;
 
     let imgUrl = "";
 
     if (imgFile) {
       const buffer = Buffer.from(await imgFile.arrayBuffer());
-
-      // مسیر فولدر آپلود
       const uploadsDir = path.join(process.cwd(), "public/uploads");
 
-      // اگر فولدر وجود نداشت بسازش
       await mkdir(uploadsDir, { recursive: true });
 
       const filename = Date.now() + "-" + imgFile.name;
@@ -38,6 +36,7 @@ export async function POST(req: Request) {
       productCode,
       size,
       description,
+      category, // 👈 اضافه شد
       img: imgUrl,
     });
 

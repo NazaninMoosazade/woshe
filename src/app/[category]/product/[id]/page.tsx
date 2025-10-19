@@ -7,6 +7,8 @@ import DescriptionProduct from "@/components/tamplates/product/DescriptionProduc
 import PriceProduct from "@/components/tamplates/product/PriceProduct";
 import Product from "@/models/Product";
 import connectToDB from "@/configs/mongodb";
+import CodeProducts from "@/components/tamplates/product/CodeProducts";
+import AddProduct from "@/components/tamplates/product/AddProduct";
 
 interface PageProps {
   params: {
@@ -33,15 +35,17 @@ const Page = async ({ params }: PageProps) => {
       <Title title={productData.name} />
 
       <section className="container mx-auto px-4 py-10">
-        <div className="flex flex-col lg:flex-row items-center justify-evenly">
+        <div className="flex flex-col lg:flex-row justify-evenly">
           {/* Right section */}
           <GalleryProduct img={productData.img} />
 
           {/* Left section */}
           <div className="text-center md:text-right">
+            <CodeProducts productCode={productData.productCode}/>
             <TitleProduct name={productData.name} />
             <DescriptionProduct description={productData.description} />
             <PriceProduct price={productData.price} />
+            <AddProduct/>
           </div>
         </div>
       </section>

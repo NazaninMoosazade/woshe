@@ -3,7 +3,15 @@ interface PriceProductProps {
 }
 
 const PriceProduct: React.FC<PriceProductProps> = ({ price }) => {
-  return <p className="text-xl font-semibold text-red-600">{price.toLocaleString()} تومان</p>;
+  return (
+
+    <div className="font-shabnam mt-11 flex flex-col space-y-1">
+      <p className="text-gray-500 font-light">قیمت</p>
+    <p className="text-3xl">{price.toLocaleString()} تومان</p>
+    </div>
+
+  
+  );
 };
 
 export default PriceProduct;

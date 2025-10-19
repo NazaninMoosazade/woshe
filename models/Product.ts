@@ -8,6 +8,7 @@ export interface IProduct extends Document {
   size: string;
   description: string;
   img: string;
+  category: string;  
   createdAt: Date;
 }
 
@@ -19,10 +20,10 @@ const ProductSchema: Schema<IProduct> = new mongoose.Schema({
   size: { type: String, required: true },
   description: { type: String, required: true },
   img: { type: String, required: true },
+  category: { type: String, required: true }, // ✅ ساده و باز
   createdAt: { type: Date, default: Date.now },
 });
 
-// ساخت مدل با تایپ
 const Product: Model<IProduct> =
   mongoose.models.Product || mongoose.model<IProduct>("Product", ProductSchema);
 
