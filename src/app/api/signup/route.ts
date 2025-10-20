@@ -1,9 +1,9 @@
+
 // app/api/auth/signup/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import connectToDB from "@/configs/mongodb";
 import UserModel from "@/models/User";
 import { generateAccessToken, hashPassword } from "@/utils/Global/auth";
-// import { roles } from "@/utils/contans";
 import { roles } from "@/utils/constans";
 
 export async function POST(req: NextRequest) {
@@ -20,12 +20,12 @@ export async function POST(req: NextRequest) {
 
     // بررسی وجود کاربر تکراری
     const isUserExist = await UserModel.findOne({
-      $or: [{ name }, { email }, { phone }],
+      $or: [{ email }, { phone }],
     });
 
     if (isUserExist) {
       return NextResponse.json(
-        { message: "The username, email or phone already exists!" },
+        { message: "The email or phone already exists!" },
         { status: 422 }
       );
     }
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     });
 
     // ساخت توکن JWT
-    const accessToken = generateAccessToken({ email: newUser.email });
+    const accessToken = generateAccessToken({ id: newUser._id, email: newUser.email });
 
     // ساخت پاسخ و ست کردن کوکی
     const response = NextResponse.json(
@@ -60,6 +60,7 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
 
+    // ست کردن کوکی توکن برای ورود خودکار
     response.cookies.set({
       name: "token",
       value: accessToken,

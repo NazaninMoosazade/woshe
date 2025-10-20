@@ -59,6 +59,8 @@ export default function SignupPage() {
       },
       body: JSON.stringify(user),
     });
+//    const data = await res.json();
+// console.log(data);
     if (res.status === 201) {
       showSwal("ثبت نام با موفقیت انجام شد", "success", "ورود به پنل کاربری");
     } else if (res.status === 500) {

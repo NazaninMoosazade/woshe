@@ -1,9 +1,17 @@
-// app/api/auth/me/route.ts
-import { NextResponse } from "next/server";
-import { getCurrentUser } from "@/utils/Server/auth";
+// pages/api/me.ts
+import { NextRequest, NextResponse } from "next/server";
+import UserModel from "@/models/User";
+import { verifyAccessToken } from "@/utils/Global/auth";
+import connectToDB from "@/configs/mongodb";
 
-export async function GET() {
-  const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
-  return NextResponse.json(user);
+export async function GET(req: NextRequest) {
+  await connectToDB();
+  const token = req.cookies.get("token")?.value;
+  if (!token) return NextResponse.json({ user: null }, { status: 401 });
+
+  const payload = verifyAccessToken(token);
+  if (!payload) return NextResponse.json({ user: null }, { status: 401 });
+
+  const user = await UserModel.findById(payload.id);
+  return NextResponse.json({ user: { name: user?.name, email: user?.email } });
 }

@@ -6,6 +6,7 @@ import { showSwal } from "@/utils/helper";
 import Navbar from "@/components/modules/navbar/Navbar";
 import Title from "@/components/tamplates/title/Title";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
+import { useUser } from "@/context/UserContext";
 import Link from "next/link";
 
 
@@ -14,6 +15,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { setUser } = useUser();
 
 const handleLogin = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -44,6 +46,9 @@ const handleLogin = async (e: React.FormEvent) => {
       showSwal("ایمیل یا پسوورد صحیح نیست", "error", "تلاش مجدد");
       setLoading(false);
       return;
+    }
+     if (data.user) {
+      setUser({ name: data.user.name });
     }
 
       showSwal(" با موفقیت لاگین شدید", "success", "اوکی");

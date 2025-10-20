@@ -20,7 +20,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/configs/*": ["./configs/*"],
-      "@/models/*": ["./models/*"]
+      "@/models/*": ["./models/*"],
+      "@/context/*": ["./context/*"]
+
 
     }
   },

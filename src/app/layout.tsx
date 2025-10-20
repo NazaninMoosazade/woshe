@@ -1,5 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { UserProvider } from "@/context/UserContext";
+import Navbar from "@/components/modules/navbar/Navbar";
+import NavbarLinks from "@/components/modules/navbar/NavbarLinks";
 
 export const metadata: Metadata = {
   title: "استودیو گل وشه",
@@ -17,7 +20,14 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className="antialiased">
-        {children}
+        {/* UserProvider دور همه کامپوننت‌ها */}
+        <UserProvider>
+          {/* Navbar همیشه نمایش داده میشه */}
+          <Navbar/>
+          <NavbarLinks />
+          {/* بقیه صفحات */}
+          {children}
+        </UserProvider>
       </body>
     </html>
   );
