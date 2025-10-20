@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import swal from "sweetalert";
+import { showSwal } from "@/utils/helper";
 import Navbar from "@/components/modules/navbar/Navbar";
 import Title from "@/components/tamplates/title/Title";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import Link from "next/link";
-import { loginAction } from "../action/signinAction";
+
 
 export default function LoginPage() {
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
@@ -15,31 +15,48 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (!phoneOrEmail.trim() || !password.trim()) {
-      swal("خطا!", "تمام فیلدها الزامی هستند.", "error");
+  if (!phoneOrEmail.trim() || !password.trim()) {
+    swal("خطا!", "تمام فیلدها الزامی هستند.", "error");
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    // ساخت body با نام "identifier" که می‌تونه ایمیل یا شماره باشه
+    const res = await fetch("/api/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        identifier: phoneOrEmail, 
+        password: password,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      showSwal("ایمیل یا پسوورد صحیح نیست", "error", "تلاش مجدد");
+      setLoading(false);
       return;
     }
 
-    setLoading(true);
-
-    const formData = new FormData();
-    formData.append("phoneOrEmail", phoneOrEmail);
-    formData.append("password", password);
-
-    const result = await loginAction(formData);
+      showSwal(" با موفقیت لاگین شدید", "success", "اوکی");
     setLoading(false);
 
-    if (result.success) {
-      swal("ورود موفق!", "به حساب خود خوش آمدید 🌟", "success").then(() => {
-        router.push("/");
-      });
-    } else {
-      swal("خطا!", result.message, "error");
-    }
-  };
+    // هدایت کاربر بعد از ورود
+    // router.push("/dashboard"); // می‌تونی به صفحه دلخواه تغییر بدی
+  } catch (err: any) {
+      showSwal("ایمیل یا پسوورد صحیح نیست", "error", "تلاش مجدد");
+    setLoading(false);
+  }
+};
+
 
   return (
     <div>

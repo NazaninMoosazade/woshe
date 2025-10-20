@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { PiUserLight, PiBagLight } from "react-icons/pi";
-import NavbarLink from "./NavbarLink";
+import NavbarLinks from "./NavbarLinks";
 
 interface NavbarProps {
   isLogin?: boolean;
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               </svg>
             </Link>
             
-            <NavbarLink />
+            <NavbarLinks />
 
             {/* icon */}
             <div className="flex items-center gap-x-7 relative text-textcolor">

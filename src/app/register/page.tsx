@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { signupAction } from "../action/signupAction";
 import swal from "sweetalert";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/modules/navbar/Navbar";
@@ -14,10 +13,7 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 import Link from "next/link";
-import {
-  validateEmail,
-  validatePhone,
-} from "@/utils/Global/auth";
+import { validateEmail, validatePhone } from "@/utils/Global/auth";
 import { showSwal } from "@/utils/helper";
 
 export default function SignupPage() {
@@ -48,25 +44,25 @@ export default function SignupPage() {
       return showSwal(" ایمیل وارد شده صحیح نیست ", "error", "  تلاش مجدد ");
     }
 
-    if(!password.trim()) {
+    if (!password.trim()) {
       showSwal("پسوورد را وارد بکنید", "error", "  تلاش مجدد ");
-    
-      return
+
+      return;
     }
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("email", email);
-    formData.append("password", password);
+    const user = { name, email, phone, password };
 
-    try {
-      await signupAction(formData);
-      swal("ثبت‌نام موفق!", "حالا می‌توانید وارد شوید.", "success").then(() => {
-        router.push("/");
-      });
-    } catch (err: any) {
-      swal("خطا!", err.message || "خطا در ثبت‌نام.", "error");
+    const res = await fetch("http://localhost:3000/api/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    if (res.status === 201) {
+      showSwal("ثبت نام با موفقیت انجام شد", "success", "ورود به پنل کاربری");
+    } else if (res.status === 500) {
+      showSwal("کاربری با این اطلاعات وجود دارد", "error", " تلاش مجدد  ");
     }
   };
 
