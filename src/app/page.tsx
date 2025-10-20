@@ -3,54 +3,7 @@ import Navbar from "@/components/modules/navbar/Navbar";
 import BoxItem from "@/components/tamplates/boxItem/BoxItem";
 import SectionBanner from "@/components/modules/sectionBanner/SectionBanner";
 import ProductsPage from "./products/page";
-
-
-interface Category {
-  name: string;
-  subtitle?: string;
-  href: string;
-  image: string;
-}
-
-// const categories: Category[] = [
-//   {
-//     name: "ترند وشه",
-//     subtitle: "WOSHE TRENDS",
-//     href: "/trends",
-//     image: "/icon/site-580-1000-trend.webp",
-//   },
-//   {
-//     name: "باکس VIP",
-//     subtitle: "VIP BOX",
-//     href: "/vipBox",
-//     image: "/icon/site-580-1000-trend.webp",
-//   },
-//   {
-//     name: " دسته گل vip",
-//     subtitle: "VIP BOUQUETS",
-//     href: "/vipBouquets",
-//     image: "/img/site-580-1000-trend.webp",
-//   },
-
-//   {
-//     name: " دسته گل ها ",
-//     subtitle: "BOUQUETS",
-//     href: "/bouquets",
-//     image: "/img/site-580-1000-trend.webp",
-//   },
-//   {
-//     name: "کیک و بادکنک",
-//     subtitle: "PASTRIES",
-//     href: "/pastries",
-//     image: "/img/site-580-1000-trend.webp",
-//   },
-//   {
-//     name: "دسته گل عروس",
-//     subtitle: "VIP BOUQUETS",
-//     href: "/vipBouquets",
-//     image: "/img/site-580-1000-trend.webp",
-//   },
-// ];
+import Category from "@/components/modules/category/category";
 
 
 const Page: React.FC = () => {
@@ -58,17 +11,7 @@ const Page: React.FC = () => {
     <>
       <Navbar />
       <div className="container">
-        <div className="mt-36 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-          {/* {categories.map((item) => (
-            <BoxItem
-              key={item.href}
-              name={item.name}
-              subtitle={item.subtitle}
-              href={item.href}
-              image={item.image}
-            />
-          ))} */}
-        </div>
+          <Category/>
         <SectionBanner />
       <ProductsPage/>
       </div>
