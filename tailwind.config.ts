@@ -23,7 +23,8 @@ const config: Config = {
         green: '#5b775e',
         bg: '#fafaf9',
         bgLightBlue: '#d8eafc',
-        textBlue: '#1e87f0'
+        textBlue: '#1e87f0',
+        textHover : '#666'
       },
       fontFamily: {
         shabnam: ["Shabnam", "sans-serif"],

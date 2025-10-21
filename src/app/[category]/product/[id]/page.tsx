@@ -10,6 +10,7 @@ import connectToDB from "@/configs/mongodb";
 import CodeProducts from "@/components/tamplates/product/CodeProducts";
 import AddProduct from "@/components/tamplates/product/AddProduct";
 import BoxDetails from "@/components/tamplates/product/BoxDetails";
+import Footer from "@/components/modules/footer/Footer";
 
 interface PageProps {
   params: {
@@ -59,6 +60,7 @@ const Page = async ({ params }: PageProps) => {
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 };

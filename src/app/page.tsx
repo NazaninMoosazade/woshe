@@ -4,6 +4,7 @@ import SectionBanner from "@/components/modules/sectionBanner/SectionBanner";
 import ProductsPage from "./products/page";
 import Category from "@/components/modules/category/category";
 import AllProduct from "@/components/modules/allProducts/AllProduct";
+import Footer from "@/components/modules/footer/Footer";
 
 const Page: React.FC = () => {
   return (
@@ -15,16 +16,8 @@ const Page: React.FC = () => {
         <ProductsPage />
         <AllProduct />
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+              <Footer/>
+
     </>
   );
 };

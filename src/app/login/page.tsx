@@ -92,7 +92,7 @@ const handleLogin = async (e: React.FormEvent) => {
                 onChange={(e) => setPhoneOrEmail(e.target.value)}
                 className="font-light p-3 pl-10 bg-white text-black rounded-md border border-gray-300 rtl w-full focus:outline-none focus:ring-2 focus:ring-[#34180e]"
                 type="text"
-                placeholder="ایمیل یا شماره موبایل"
+                placeholder=" شماره موبایل"
               />
             </div>
 
