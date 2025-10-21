@@ -33,10 +33,10 @@ const Page = async ({ params }: PageProps) => {
     <>
       <Navbar />
 
-      <Title title={productData.name} />
+      <Title title={productData.category} />
 
       <section className="container mx-auto px-4 py-10">
-        <div className="flex flex-col lg:flex-row justify-evenly">
+        <div className="flex flex-col lg:flex-row gap-x-5 justify-evenly">
           {/* Right section */}
           <GalleryProduct img={productData.img} />
 

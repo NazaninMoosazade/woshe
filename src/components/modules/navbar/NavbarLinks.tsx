@@ -41,7 +41,7 @@ function NavbarLinks() {
 
   return (
     <>
-      <ul className="flex items-center gap-x-9 text-textcolor">
+      <ul className="hidden lg:flex items-center gap-x-9 text-textcolor">
         {links.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -61,7 +61,7 @@ function NavbarLinks() {
       </ul>
 
       {/* icon */}
-      <div className="flex items-center gap-x-7 relative text-textcolor">
+      <div className="hidden lg:flex items-center gap-x-7 relative text-textcolor">
         {/* آیکون کاربر */}
         <div className="relative group">
           {user ? (

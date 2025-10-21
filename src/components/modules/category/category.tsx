@@ -1,6 +1,5 @@
-import BoxItem from "@/components/tamplates/boxItem/BoxItem";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 
 interface CategoryType {
   name: string;
@@ -50,26 +49,28 @@ const categories: CategoryType[] = [
 
 function Category() {
   return (
-    <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-4">
+    <ul className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-4 mt-28">
       {categories.map((category, index) => (
-        <li key={index}>
+        <li key={index} className="mt-9">
           <Link
             href={category.href}
-            className="block w-full h-full mt-24"
+            className="block w-full h-full font-shabnam font-bold  group relative overflow-hidden"
           >
-            <div className="flex flex-col w-full h-full mt-14">
+            <div className="relative flex flex-col w-full h-full">
               <img
                 src={category.image}
                 alt={category.name}
-                className="w-full object-cover"
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="p-4 flex flex-col justify-between flex-grow">
-                {/* <h3 className="text-lg font-semibold text-gray-800 text-center">
-                  {category.name}
-                </h3> */}
-                <p className="text-sm text-gray-500 text-center">
-                  {category.subtitle}
-                </p>
+
+              {/* لایه بکگراند هنگام هاور */}
+              <div className="absolute inset-0 bg-[#263427]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <div className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <h3 className="text-lg text-center">{category.name}</h3>
+                  <p className="text-sm text-center">{category.subtitle}</p>
+                </div>
               </div>
             </div>
           </Link>

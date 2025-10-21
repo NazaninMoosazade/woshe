@@ -27,13 +27,13 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   return (
     <>
-      <header
-        className={`fixed top-0 w-full z-[981] h-32 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-[20px] shadow-[0_0_0_1px_rgba(0,0,0,0.05)]"
-            : "bg-white"
-        }`}
-      >
+  <header
+  className={`hidden lg:block fixed top-0 w-full z-[981] h-32 transition-all duration-300 ${
+    scrolled
+      ? "bg-white/40 backdrop-blur-[10px] border-b border-white/20 shadow-lg"
+      : "bg-white/100"
+  }`}
+>
         <nav className="container">
           <div className="flex items-center justify-between mt-4 font-shabnam">
             <Link href="/">

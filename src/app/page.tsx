@@ -1,19 +1,19 @@
 import React from "react";
 import Navbar from "@/components/modules/navbar/Navbar";
-import BoxItem from "@/components/tamplates/boxItem/BoxItem";
 import SectionBanner from "@/components/modules/sectionBanner/SectionBanner";
 import ProductsPage from "./products/page";
 import Category from "@/components/modules/category/category";
-
+import AllProduct from "@/components/modules/allProducts/AllProduct";
 
 const Page: React.FC = () => {
   return (
     <>
       <Navbar />
       <div className="container">
-          <Category/>
+        <Category />
         <SectionBanner />
-      <ProductsPage/>
+        <ProductsPage />
+        <AllProduct />
       </div>
       <br />
       <br />
