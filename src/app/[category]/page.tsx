@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/modules/navbar/Navbar";
+import Footer from "@/components/modules/footer/Footer";
 
 interface ProductType {
   _id: string;
@@ -15,15 +16,25 @@ interface PageProps {
 
 // تابع fetch محصولات
 async function getProducts(category: string) {
-  const res = await fetch(`/api/product/${category}`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to fetch products");
-  return res.json();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product/${category}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
+  // 👇 این خط خیلی مهمه — داده رو برگردون
+  const data = await res.json();
+  return data;
 }
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = params;
   let products: ProductType[] = [];
+
   try {
+    // 👇 دقت کن: اگه در route.ts فقط محصولات رو می‌فرستی (بدون data: ...)، این همون آرایه‌ست
     products = await getProducts(category);
     console.log("Fetched products:", products);
   } catch (err) {
@@ -53,12 +64,16 @@ export default async function CategoryPage({ params }: PageProps) {
                   className="rounded-lg"
                 />
                 <h2 className="text-lg font-semibold mt-2">{product.name}</h2>
-                <p className="text-gray-600">{product.price.toLocaleString()} تومان</p>
+                <p className="text-gray-600">
+                  {product.price.toLocaleString()} تومان
+                </p>
               </div>
             ))
           )}
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }

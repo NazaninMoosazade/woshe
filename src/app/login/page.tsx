@@ -43,7 +43,7 @@ const handleLogin = async (e: React.FormEvent) => {
     const data = await res.json();
 
     if (!res.ok) {
-      showSwal("ایمیل یا پسوورد صحیح نیست", "error", "تلاش مجدد");
+      showSwal("شماره تلفن صحیح نیست", "error", "تلاش مجدد");
       setLoading(false);
       return;
     }
@@ -57,7 +57,7 @@ const handleLogin = async (e: React.FormEvent) => {
     // هدایت کاربر بعد از ورود
     // router.push("/dashboard"); // می‌تونی به صفحه دلخواه تغییر بدی
   } catch (err: any) {
-      showSwal("ایمیل یا پسوورد صحیح نیست", "error", "تلاش مجدد");
+      showSwal("شماره تلفن صحیح نیست", "error", "تلاش مجدد");
     setLoading(false);
   }
 };

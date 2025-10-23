@@ -41,7 +41,7 @@ function NavbarLinks() {
 
   return (
     <>
-      <ul className="hidden lg:flex items-center gap-x-9 text-textcolor">
+      <ul className="hidden md:flex items-center text-xs xl:text-base gap-x-7 xl:gap-x-9 text-textcolor">
         {links.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -57,18 +57,17 @@ function NavbarLinks() {
             </li>
           );
         })}
-        {/* {user && <li>سلام، {user.name} 👋</li>} */}
       </ul>
 
       {/* icon */}
-      <div className="hidden lg:flex items-center gap-x-7 relative text-textcolor">
+      <div className="hidden md:flex items-center gap-x-2 xl:gap-x-7 relative text-textcolor">
         {/* آیکون کاربر */}
-        <div className="relative group">
+        <div className="relative group text-xs xl:text-sm">
           {user ? (
-            <Link href={"login"}>{user.name}</Link>
+            <Link href={"login"} className="text-xs xl:text-sm">{user.name}</Link>
           ) : (
             <Link href={"login"}>
-              <PiUserLight className="w-7 h-7 cursor-pointer transition-colors duration-200" />
+              <PiUserLight className="w-5 h-5 lg:w-7 lg:h-7 cursor-pointer transition-colors duration-200" />
 
               <div className="absolute top-full left-8 hidden -mt-5 group-hover:flex duration-200 bg-green text-white text-sm font-shabnam px-5 h-6 rounded-md shadow-lg whitespace-nowrap">
                 ورود
@@ -79,7 +78,7 @@ function NavbarLinks() {
 
         {/* آیکون سبد خرید */}
         <div className="relative group">
-          <PiBagLight className="w-7 h-7 cursor-pointer transition-colors duration-200" />
+          <PiBagLight className="w-5 h-5 lg:w-7 lg:h-7 cursor-pointer transition-colors duration-200" />
           <div className="absolute top-full left-8 -mt-5 hidden group-hover:flex duration-200 bg-green text-white text-sm font-shabnam px-5 h-6 rounded-md shadow-lg whitespace-nowrap">
             سبد خرید
           </div>
