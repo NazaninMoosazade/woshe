@@ -49,7 +49,7 @@ const categories: CategoryType[] = [
 
 function Category() {
   return (
-    <ul className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-4 lg:mt-28">
+    <ul className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-4 mt-14 lg:mt-28">
       {categories.map((category, index) => (
         <li key={index} className="mt-9">
           <Link
