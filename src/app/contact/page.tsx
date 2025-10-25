@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/modules/navbar/Navbar";
-import Title from "@/components/tamplates/title/Title";
-import Form from "@/components/tamplates/contact-us/Form";
+import TitleBanner from "@/components/tamplates/TitleBanner/TitleBanner";
+import Form from "@/components/tamplates/Contact-us/Form";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPhone } from "react-icons/bs";
 
@@ -9,7 +9,7 @@ function Page() {
   return (
     <>
       <Navbar />
-      <Title title="تماس با وشه" />
+      <TitleBanner title="تماس با وشه" />
       <main className="container mx-auto p-4 font-shabnam">
         <div className="flex flex-col lg:flex-row md:space-x-4">
           {/* ستون سمت راست */}

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { showSwal } from "@/utils/helper";
 import Navbar from "@/components/modules/navbar/Navbar";
-import Title from "@/components/tamplates/title/Title";
+// import Title from "@/components/tamplates/title/Title";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import { useUser } from "@/context/UserContext";
 import Link from "next/link";
@@ -66,7 +66,7 @@ const handleLogin = async (e: React.FormEvent) => {
   return (
     <div>
       <Navbar />
-      <Title title="ورود به حساب کاربری" />
+      {/* <Title title="ورود به حساب کاربری" /> */}
       <form onSubmit={handleLogin}>
         <div className="mt-24 mb-12 flex items-center justify-center p-4">
           <div className="grid bg-white font-shabnam font-bold p-6 w-full max-w-[380px] sm:max-w-[420px] mx-auto rounded-2xl shadow-xl text-center text-black transition-all duration-300 hover:shadow-2xl">

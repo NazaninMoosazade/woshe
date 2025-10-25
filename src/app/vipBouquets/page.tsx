@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from '@/components/modules/navbar/Navbar'
-import Title from '@/components/tamplates/title/Title'
-
+import TitleBanner from '@/components/tamplates/TitleBanner/TitleBanner'
+import Footer from '@/components/modules/footer/Footer'
 const page = () => {
   return (
  <>
  <Navbar/>
- <Title title='دسته گل vip'/>
+ <TitleBanner title='دسته گل vip'/>
+ <Footer/>
  </>
   )
 }

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import swal from "sweetalert";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/modules/navbar/Navbar";
-import Title from "@/components/tamplates/title/Title";
+// import Title from "@/components/tamplates/title/Title";
 import {
   FaUserAlt,
   FaPhoneAlt,
@@ -62,7 +62,8 @@ export default function SignupPage() {
 //    const data = await res.json();
 // console.log(data);
     if (res.status === 201) {
-      showSwal("ثبت نام با موفقیت انجام شد", "success", "ورود به پنل کاربری");
+      showSwal("ثبت نام با موفقیت انجام شد", "success", "صفحه اصلی");
+      
     } else if (res.status === 500) {
       showSwal("کاربری با این اطلاعات وجود دارد", "error", " تلاش مجدد  ");
     }
@@ -71,7 +72,7 @@ export default function SignupPage() {
   return (
     <>
       <Navbar />
-      <Title title="ساخت حساب کاربری" />
+      {/* <Title title="ساخت حساب کاربری" /> */}
       <form
         onSubmit={handleSubmit}
         className="mt-12 mb-12 flex items-center justify-center p-4"

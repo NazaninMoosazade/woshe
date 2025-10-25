@@ -4,7 +4,7 @@ interface GalleryProductProps {
 
 const GalleryProduct: React.FC<GalleryProductProps> = ({ img }) => {
   return (
-    <div>
+    <div className="flex items-center justify-center">
       <img
         src={img}
         alt="Product image"

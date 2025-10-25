@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "@/components/modules/navbar/Navbar";
-import Title from "@/components/tamplates/title/Title";
-import GalleryProduct from "@/components/tamplates/product/GalleryProduct";
-import TitleProduct from "@/components/tamplates/product/TitleProduct";
-import DescriptionProduct from "@/components/tamplates/product/DescriptionProduct";
-import PriceProduct from "@/components/tamplates/product/PriceProduct";
+import TitleBanner from "@/components/tamplates/TitleBanner/TitleBanner";
+import GalleryProduct from "@/components/tamplates/ProductDetails/GalleryProduct";
+import TitleProduct from "@/components/tamplates/ProductDetails/TitleProduct";
+import DescriptionProduct from "@/components/tamplates/ProductDetails/DescriptionProduct";
+import PriceProduct from "@/components/tamplates/ProductDetails/PriceProduct";
 import Product from "@/models/Product";
 import connectToDB from "@/configs/mongodb";
-import CodeProducts from "@/components/tamplates/product/CodeProducts";
-import AddProduct from "@/components/tamplates/product/AddProduct";
-import BoxDetails from "@/components/tamplates/product/BoxDetails";
+import CodeProducts from "@/components/tamplates/ProductDetails/CodeProducts";
+import AddProduct from "@/components/tamplates/ProductDetails/AddProduct";
+import BoxDetails from "@/components/tamplates/ProductDetails/BoxDetails";
 import Footer from "@/components/modules/footer/Footer";
 
 interface PageProps {
@@ -34,15 +34,17 @@ const Page = async ({ params }: PageProps) => {
     <>
       <Navbar />
 
-      <Title title={productData.category} />
+      <TitleBanner title={productData.category} />
 
       <section className="container mx-auto px-4 py-10">
         <div className="flex flex-col lg:flex-row gap-x-5 justify-evenly">
           {/* Right section */}
-          <GalleryProduct img={productData.img} />
+        
+            <GalleryProduct img={productData.img} />
+        
 
           {/* Left section */}
-          <div className="text-center md:text-right">
+          <div className="flex-col items-center justify-center lg:justify-start">
             <CodeProducts productCode={productData.productCode} />
             <TitleProduct name={productData.name} />
             <DescriptionProduct description={productData.description} />

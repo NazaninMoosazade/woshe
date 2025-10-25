@@ -16,14 +16,16 @@ function Form() {
       return showSwal("لطفا  نام خود را وارد نمایید", "error", "چشم");
     }
 
-    const isValidEmail = validateEmail(email);
-    if (!isValidEmail) {
-      return showSwal("ایمیل وارد شده صحیح نیست", "error", "تلاش مجدد");
-    }
-
+    
     const isValidPhone = validatePhone(phone);
     if (!isValidPhone) {
       return showSwal("شماره وارد شده صحیح نیست", "error", "تلاش مجدد");
+    }
+
+
+    const isValidEmail = validateEmail(email);
+    if (!isValidEmail) {
+      return showSwal("ایمیل وارد شده صحیح نیست", "error", "تلاش مجدد");
     }
 
     if (!message) {
