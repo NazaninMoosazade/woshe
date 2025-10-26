@@ -50,7 +50,7 @@ const UserPanelLayout: React.FC<{ children?: React.ReactNode }> = ({ children })
       {/* محتوای اصلی */}
       <div className="flex-1 flex flex-col">
         <Topbar toggleSidebar={toggleSidebar} />
-        <main className="mt-16 p-6 md:ml-64">
+        <main className="mt-16 p-6 ">
           {children || <p>Welcome to your user panel!</p>}
         </main>
       </div>
