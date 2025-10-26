@@ -23,8 +23,8 @@ export default function RootLayout({
         {/* UserProvider دور همه کامپوننت‌ها */}
         <UserProvider>
           {/* Navbar همیشه نمایش داده میشه */}
-          <Navbar/>
-          <NavbarLinks />
+          {/* <Navbar/>
+          <NavbarLinks /> */}
           {/* بقیه صفحات */}
           {children}
         </UserProvider>

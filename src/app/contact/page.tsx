@@ -4,11 +4,13 @@ import TitleBanner from "@/components/tamplates/TitleBanner/TitleBanner";
 import Form from "@/components/tamplates/Contact-us/Form";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPhone } from "react-icons/bs";
+import NavbarResponsive from "@/components/modules/navbar/NavbarResponsive";
 
 function Page() {
   return (
     <>
       <Navbar />
+      <NavbarResponsive/>
       <TitleBanner title="تماس با وشه" />
       <main className="container mx-auto p-4 font-shabnam">
         <div className="flex flex-col lg:flex-row md:space-x-4">

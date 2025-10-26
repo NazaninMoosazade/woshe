@@ -8,6 +8,8 @@ import Navbar from "@/components/modules/navbar/Navbar";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import { useUser } from "@/context/UserContext";
 import Link from "next/link";
+import NavbarResponsive from "@/components/modules/navbar/NavbarResponsive";
+import Footer from "@/components/modules/footer/Footer";
 
 
 export default function LoginPage() {
@@ -66,6 +68,7 @@ const handleLogin = async (e: React.FormEvent) => {
   return (
     <div>
       <Navbar />
+      <NavbarResponsive/>
       {/* <Title title="ورود به حساب کاربری" /> */}
       <form onSubmit={handleLogin}>
         <div className="mt-24 mb-12 flex items-center justify-center p-4">
@@ -134,6 +137,7 @@ const handleLogin = async (e: React.FormEvent) => {
           </div>
         </div>
       </form>
+      <Footer/>
     </div>
   );
 }

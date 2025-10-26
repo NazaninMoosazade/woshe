@@ -11,6 +11,7 @@ import CodeProducts from "@/components/tamplates/ProductDetails/CodeProducts";
 import AddProduct from "@/components/tamplates/ProductDetails/AddProduct";
 import BoxDetails from "@/components/tamplates/ProductDetails/BoxDetails";
 import Footer from "@/components/modules/footer/Footer";
+import NavbarResponsive from "@/components/modules/navbar/NavbarResponsive";
 
 interface PageProps {
   params: {
@@ -33,15 +34,14 @@ const Page = async ({ params }: PageProps) => {
   return (
     <>
       <Navbar />
-
+      <NavbarResponsive />
       <TitleBanner title={productData.category} />
 
       <section className="container mx-auto px-4 py-10">
         <div className="flex flex-col lg:flex-row gap-x-5 justify-evenly">
           {/* Right section */}
-        
-            <GalleryProduct img={productData.img} />
-        
+
+          <GalleryProduct img={productData.img} />
 
           {/* Left section */}
           <div className="flex-col items-center justify-center lg:justify-start">
@@ -62,7 +62,7 @@ const Page = async ({ params }: PageProps) => {
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 };
