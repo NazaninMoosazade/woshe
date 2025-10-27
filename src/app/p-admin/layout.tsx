@@ -1,5 +1,9 @@
-import AdminPanelLayout from "@/components/modules/p-user/AdminPanelLayout";
+import AdminPanelLayout from "@/components/modules/p-admin/AdminPanelLayout";
 
-export default function UserLayout({ children }: { children: React.ReactNode }) {
+export default function UserLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <AdminPanelLayout>{children}</AdminPanelLayout>;
 }

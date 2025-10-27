@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState } from "react";
 import { UsersRound, House, LogOut, X, ShoppingCart } from "lucide-react";
@@ -10,7 +10,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
-  const [activeLink, setActiveLink] = useState<string>("/p-user");
+  const [activeLink, setActiveLink] = useState<string>("/p-admin");
 
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
@@ -34,9 +34,9 @@ const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
         <Link
           href="/p-admin"
           className={`flex items-center gap-2 p-2 mt-12 rounded ${
-            activeLink === "/p-user" ? "bg-lime-950" : "hover:bg-lime-950"
+            activeLink === "/p-admin" ? "bg-lime-950" : "hover:bg-lime-950"
           }`}
-          onClick={() => handleLinkClick("/p-user")}
+          onClick={() => handleLinkClick("/p-admin")}
         >
           <House size={18} /> خانه
         </Link>
