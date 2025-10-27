@@ -2,6 +2,8 @@ import React from "react";
 import DataTableProducts from "@/components/tamplates/p-admin/DataTableProducts/DataTableProducts";
 import Product from "@/models/Product";
 import connectToDB from "@/configs/mongodb";
+import AddProducts from "@/components/tamplates/p-admin/AddProducts/AddProducts";
+
 
 const page = async () => {
   await connectToDB();
@@ -9,6 +11,7 @@ const page = async () => {
 
   return (
     <>
+    <AddProducts/>
       {products.length === 0 ? (
         <h1>در حال حاضر محصولی وجود ندارد</h1>
       ) : (
