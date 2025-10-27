@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
-const UserPanelLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const AdminPanelLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
@@ -58,4 +58,4 @@ const UserPanelLayout: React.FC<{ children?: React.ReactNode }> = ({ children })
   );
 };
 
-export default UserPanelLayout;
+export default AdminPanelLayout;

@@ -33,10 +33,10 @@ const Topbar: React.FC<TopbarProps> = ({ toggleSidebar }) => {
         <Menu size={24} />
       </button>
 
-      <h1 className="text-lg font-shabnam text-gray-800">داشبورد کاربر</h1>
+      <h1 className="text-lg font-shabnam text-gray-800">داشبورد ادمین</h1>
 
       <div className="flex items-center gap-3 font-shabnam">
-        {user?.name ? <p>{user.name}</p> : <p >کاربر وارد نشده</p>}
+        {user?.name ? <p>{user.name}</p> : <p > ادمین </p>}
       </div>
     </header>
   );

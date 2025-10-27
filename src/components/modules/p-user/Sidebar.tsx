@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { Send, House, LogOut, X, Heart } from "lucide-react";
+import { UsersRound, House, LogOut, X, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 interface SidebarProps {
@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
 
       <nav className="flex flex-col gap-7 font-shabnam">
         <Link
-          href="/p-user"
+          href="/p-admin"
           className={`flex items-center gap-2 p-2 mt-12 rounded ${
             activeLink === "/p-user" ? "bg-lime-950" : "hover:bg-lime-950"
           }`}
@@ -42,24 +42,34 @@ const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
         </Link>
 
         <Link
-          href="/p-user/wishlist"
+          href="/p-admin/products"
           className={`flex items-center gap-2 p-2 rounded ${
-            activeLink === "/p-user/wishlist" ? "bg-lime-950" : "hover:bg-lime-950"
+            activeLink === "/p-admin/products" ? "bg-lime-950" : "hover:bg-lime-950"
           }`}
-          onClick={() => handleLinkClick("/p-user/wishlist")}
+          onClick={() => handleLinkClick("/p-admin/products")}
         >
-          <Heart size={18} /> علاقه مندی ها
+          <ShoppingCart size={18} />   محصولات
         </Link>
 
         <Link
+          href="/p-admin/users"
+          className={`flex items-center gap-2 p-2 rounded ${
+            activeLink === "/p-admin/users" ? "bg-lime-950" : "hover:bg-lime-950"
+          }`}
+          onClick={() => handleLinkClick("/p-admin/users")}
+        >
+          <UsersRound size={18} />  کاربران
+        </Link>
+
+           {/* <Link
           href="/p-user/ticket"
           className={`flex items-center gap-2 p-2 rounded ${
             activeLink === "/p-user/ticket" ? "bg-lime-950" : "hover:bg-lime-950"
           }`}
           onClick={() => handleLinkClick("/p-user/ticket")}
         >
-          <Send size={18} /> تیکت ها
-        </Link>
+          <Send size={18} />  تخفیفات
+        </Link> */}
 
         <button
           className={`flex items-center gap-2 p-2 rounded mt-auto ${

@@ -1,14 +1,17 @@
-import React from "react";
-import AdminPanelLayout from "@/components/layouts/AdminPanelLayout";
+'use client'
 
-function page() {
+import React from 'react';
+import ClockWithUser from '@/components/modules/p-user/ClockWithUser'; 
+import SalesChart from '@/components/modules/p-user/SalesChart';
+
+
+function Page() {
   return (
-   
-      <main>
-        <h1>admin panel</h1>
-      </main>
-
+   <div className=" bg-gray-100 p-6 flex flex-col items-center gap-6">
+      <ClockWithUser />
+      <SalesChart/>
+    </div>
   );
 }
 
-export default page;
+export default Page;
