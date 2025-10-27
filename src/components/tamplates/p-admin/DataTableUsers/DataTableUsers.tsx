@@ -127,7 +127,7 @@ const DataTableUsers: React.FC<DataTableProps> = ({ title, users }) => {
                   <button
                     onClick={() => banUser(user.email, user.phone)}
                     type="button"
-                    className="w-full rounded bg-[#711d1c] px-3 py-1 text-sm text-white hover:opacity-80"
+                    className="w-full rounded bg-blue-950 px-3 py-1 text-sm text-white hover:opacity-80"
                   >
                     بن
                   </button>
