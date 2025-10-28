@@ -44,7 +44,6 @@ const AddProducts: React.FC = () => {
           title: "محصول با موفقیت افزوده شد ✅",
           icon: "success",
         });
-        // پاک کردن فرم
         setName("");
         setProductCode("");
         setPrice("");
@@ -133,7 +132,7 @@ const AddProducts: React.FC = () => {
           <label className="text-lg mb-2">دسته‌بندی محصول</label>
           <input
             type="text"
-            placeholder=" مثلا trends یا vipBouquets"
+            placeholder=" مثلا trends"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             className="p-3 border-2 border-red-900 rounded-md focus:outline-none"

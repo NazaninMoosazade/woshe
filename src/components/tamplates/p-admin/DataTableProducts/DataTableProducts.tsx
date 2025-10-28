@@ -1,6 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
+import swal from "sweetalert";
+import { useRouter } from "next/navigation";
 
 interface ProductTypes {
   _id: string;
@@ -17,12 +19,40 @@ interface DataTableProps {
 }
 
 const DataTableProducts: React.FC<DataTableProps> = ({ title, products }) => {
+  const router = useRouter();
+
+  const handleDelete = async (id: string) => {
+    const confirm = await swal({
+      title: "حذف محصول",
+      text: "آیا از حذف این محصول مطمئن هستید؟",
+      icon: "warning",
+      buttons: ["خیر", "بله، حذف کن"],
+      dangerMode: true,
+    });
+
+    if (!confirm) return;
+
+    const res = await fetch("/api/products/delete", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+
+    if (res.ok) {
+      await swal("محصول با موفقیت حذف شد ✅", { icon: "success" });
+      router.refresh();
+    } else {
+      const data = await res.json();
+      swal(data.message || "خطا در حذف محصول", { icon: "error" });
+    }
+  };
+
   return (
     <div className="p-4 md:p-8 font-shabnam">
       <h1 className="text-2xl md:text-3xl font-medium text-right mb-6">{title}</h1>
 
       {/* Desktop Table */}
-      <div className="hidden md:block overflow-x-auto bg-gray-100 p-4 rounded-lg shadow-md">
+      <div className="hidden lg:block overflow-x-auto bg-gray-100 p-4 rounded-lg shadow-md">
         <table className="min-w-full bg-white text-center border border-gray-200">
           <thead className="bg-gray-200">
             <tr>
@@ -41,17 +71,20 @@ const DataTableProducts: React.FC<DataTableProps> = ({ title, products }) => {
                 <td className="py-2 px-4">{index + 1}</td>
                 <td className="py-2 px-4">{product.name}</td>
                 <td className="py-2 px-4">{product.productCode}</td>
-                <td className="py-2 px-4">{product.price}</td>
+                <td className="py-2 px-4">{product.price.toLocaleString('fa-IR')}</td>
                 <td className="py-2 px-4">
                   <img
-                    src={product.img || '/placeholder.png'}
+                    src={product.img || "/placeholder.png"}
                     alt={product.name}
                     className="w-16 h-16 object-cover mx-auto rounded"
                   />
                 </td>
                 <td className="py-2 px-4">{product.category}</td>
                 <td className="py-2 px-4">
-                  <button className="bg-red-900 text-white px-3 py-1 rounded w-full hover:bg-red-700 transition">
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="bg-red-900 text-white px-3 py-1 rounded w-full hover:bg-red-700 transition"
+                  >
                     حذف
                   </button>
                 </td>
@@ -62,7 +95,7 @@ const DataTableProducts: React.FC<DataTableProps> = ({ title, products }) => {
       </div>
 
       {/* Mobile Cards */}
-      <div className="md:hidden flex flex-col gap-4">
+      <div className="lg:hidden flex flex-col gap-4">
         {products.map((product, index) => (
           <div
             key={product._id}
@@ -70,7 +103,7 @@ const DataTableProducts: React.FC<DataTableProps> = ({ title, products }) => {
           >
             <div className="w-24 h-24 flex-shrink-0">
               <img
-                src={product.img || '/placeholder.png'}
+                src={product.img || "/placeholder.png"}
                 alt={product.name}
                 className="w-full h-full object-cover rounded"
               />
@@ -82,7 +115,10 @@ const DataTableProducts: React.FC<DataTableProps> = ({ title, products }) => {
               <p>دسته بندی: {product.category}</p>
             </div>
             <div className="self-start">
-              <button className="bg-red-900 text-white px-3 py-1 rounded hover:bg-red-700 transition">
+              <button
+                onClick={() => handleDelete(product._id)}
+                className="bg-red-900 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+              >
                 حذف
               </button>
             </div>
