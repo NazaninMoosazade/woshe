@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { UsersRound, House, LogOut, X, ShoppingCart , MessageCircleMore } from "lucide-react";
+import { UsersRound, House, LogOut, X, ShoppingCart , MessageCircleMore , Contact} from "lucide-react";
 import Link from "next/link";
 
 interface SidebarProps {
@@ -69,6 +69,16 @@ const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
           onClick={() => handleLinkClick("/p-admin/comments")}
         >
           <MessageCircleMore size={18} />  کامنت ها
+        </Link>
+
+             <Link
+          href="/p-admin/contacts"
+          className={`flex items-center gap-2 p-2 rounded ${
+            activeLink === "/p-admin/contacts" ? "bg-lime-950" : "hover:bg-lime-950"
+          }`}
+          onClick={() => handleLinkClick("/p-admin/contacts")}
+        >
+          <Contact size={18} />  مخاطبین
         </Link>
 
         <button

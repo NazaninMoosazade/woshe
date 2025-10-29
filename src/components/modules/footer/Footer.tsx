@@ -23,19 +23,17 @@ function Footer() {
 
             <div className="flex flex-col text-right space-y-2 pt-8 sm:pt-5 mx-auto pr-4">
               <h1 className="text-green">حساب کاربری</h1>
-              <Link className="font-light hover:text-textHover" href="bouquets">
+              <Link className="font-light hover:text-textHover" href="register">
                 ورود / ثبت نام
               </Link>
-              <Link className="font-light hover:text-textHover" href="trends">
-                سفارش های من
-              </Link>
+ 
 
               {/* <span className="hidden lg:block absolute top-0 right-0 h-60 border-r border-gray-300"></span> */}
             </div>
 
             <div className="flex flex-col text-right space-y-2 pt-8 sm:pt-5 mx-auto pr-4">
               <h1 className="text-green">استودیو گل وشه</h1>
-              <Link className="font-light hover:text-textHover" href="bouquets">
+              <Link className="font-light hover:text-textHover" href="contact">
                 تماس با وشه
               </Link>
               <Link className="font-light hover:text-textHover" href="trends">
