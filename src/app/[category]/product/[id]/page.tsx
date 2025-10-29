@@ -12,6 +12,8 @@ import AddProduct from "@/components/tamplates/ProductDetails/AddProduct";
 import BoxDetails from "@/components/tamplates/ProductDetails/BoxDetails";
 import Footer from "@/components/modules/footer/Footer";
 import NavbarResponsive from "@/components/modules/navbar/NavbarResponsive";
+import Comments from "@/components/tamplates/ProductDetails/Comments";
+import CommentModel from "@/models/Comment";
 
 interface PageProps {
   params: {
@@ -28,6 +30,11 @@ const Page = async ({ params }: PageProps) => {
   if (!product) {
     return <div>محصول یافت نشد!</div>;
   }
+
+  const comments = await CommentModel.find({ productID: productID })
+    .sort({ date: -1 })
+    .lean();
+  const commentsData = JSON.parse(JSON.stringify(comments));
 
   const productData = JSON.parse(JSON.stringify(product));
 
@@ -52,6 +59,10 @@ const Page = async ({ params }: PageProps) => {
             <AddProduct />
             <BoxDetails />
           </div>
+        </div>
+
+        <div className="mt-28">
+          <Comments comments={commentsData} productID={productData._id} /> 
         </div>
 
         <div className="relative flex items-center my-10">
