@@ -27,13 +27,6 @@ const Comment = ({ username, body, date }: CommentProps) => {
         </div>
 
         <p className="mt-2 text-sm sm:text-base text-gray-700">{body}</p>
-
-        {/* ستاره‌ها (مثال، اگر score اضافه شود) */}
-        {/* <div className="mt-2 flex gap-1">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <span key={i} className="text-yellow-400">★</span>
-          ))}
-        </div> */}
       </div>
     </section>
   );
