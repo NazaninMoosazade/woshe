@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import { UsersRound, House, LogOut, X, ShoppingCart , MessageCircleMore , Contact} from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
+
 
 interface SidebarProps {
   closeSidebar?: () => void;
@@ -15,6 +18,41 @@ const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
   };
+
+  const router = useRouter()
+
+  const handleLogout = async () => {
+
+    
+
+  const result = await Swal.fire({
+    title: "آیا از خروج مطمئن هستید؟",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "بله، خارج شو",
+    cancelButtonText: "خیر",
+    confirmButtonColor: "#b91c1c",
+  });
+
+  if (result.isConfirmed) {
+    const res = await fetch("/api/signout", { method: "POST" });
+
+    if (res.ok) {
+      Swal.fire({
+        title: "با موفقیت خارج شدید",
+        icon: "success",
+        confirmButtonText: "باشه",
+      });
+      router.push("/login");
+    } else {
+      Swal.fire({
+        title: "خطا در خروج",
+        text: "لطفاً دوباره تلاش کنید.",
+        icon: "error",
+      });
+    }
+  }
+};
 
   return (
     <aside className="bg-green text-white w-64 h-full flex flex-col p-4">
@@ -85,9 +123,9 @@ const Sidebar: React.FC<SidebarProps> = ({ closeSidebar, isMobile }) => {
           className={`flex items-center gap-2 p-2 rounded mt-auto ${
             activeLink === "logout" ? "bg-lime-950" : "hover:bg-lime-950"
           }`}
-          onClick={() => handleLinkClick("logout")}
+         onClick={handleLogout}
         >
-          <LogOut size={18} /> Logout
+          <LogOut size={18} /> خروج
         </button>
       </nav>
     </aside>

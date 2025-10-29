@@ -19,7 +19,11 @@ export default function LoginPage() {
   const router = useRouter();
   const { setUser } = useUser();
 
+  
+  
+
 const handleLogin = async (e: React.FormEvent) => {
+  const router = useRouter()
   e.preventDefault();
 
   if (!phoneOrEmail.trim() || !password.trim()) {
@@ -30,7 +34,6 @@ const handleLogin = async (e: React.FormEvent) => {
   setLoading(true);
 
   try {
-    // ساخت body با نام "identifier" که می‌تونه ایمیل یا شماره باشه
     const res = await fetch("/api/signin", {
       method: "POST",
       headers: {
@@ -55,9 +58,9 @@ const handleLogin = async (e: React.FormEvent) => {
 
       showSwal(" با موفقیت لاگین شدید", "success", "اوکی");
     setLoading(false);
+    router.push('/p-admin')
 
-    // هدایت کاربر بعد از ورود
-    // router.push("/dashboard"); // می‌تونی به صفحه دلخواه تغییر بدی
+    
   } catch (err: any) {
       showSwal("شماره تلفن صحیح نیست", "error", "تلاش مجدد");
     setLoading(false);

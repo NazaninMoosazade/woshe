@@ -61,10 +61,10 @@ export default function SignupPage() {
       },
       body: JSON.stringify(user),
     });
-//    const data = await res.json();
-// console.log(data);
+
     if (res.status === 201) {
-      showSwal("ثبت نام با موفقیت انجام شد", "success", "صفحه اصلی");
+      showSwal("ثبت نام با موفقیت انجام شد", "success", " فهمیدم");
+      router.push('/p-admin')
       
     } else if (res.status === 500) {
       showSwal("کاربری با این اطلاعات وجود دارد", "error", " تلاش مجدد  ");

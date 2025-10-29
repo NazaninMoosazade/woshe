@@ -1,5 +1,8 @@
-import React from "react";
+'use client'
 
+import React from "react";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 interface ContactProps {
   _id: string;
   name: string;
@@ -13,6 +16,45 @@ interface DataTableProps {
 }
 
 const DataTableContacts : React.FC <DataTableProps>=  ({title , contacts}) => {
+
+  const router = useRouter()
+
+const handleDeleteContact = async (id: string) => {
+  const result = await Swal.fire({
+    title: 'آیا مطمئن هستید؟',
+    text: 'این مخاطب برای همیشه حذف می‌شود!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'بله، حذف کن',
+    cancelButtonText: 'خیر',
+    confirmButtonColor: '#b91c1c',
+    cancelButtonColor: '#6b7280',
+  });
+
+  if (result.isConfirmed) {
+    const res = await fetch(`/api/contact/${id}`, { method: 'DELETE' });
+
+    if (res.status === 200) {
+      Swal.fire({
+        title: 'موفق!',
+        text: 'مخاطب حذف شد.',
+        icon: 'success',
+        confirmButtonText: 'باشه',
+      });
+      router.refresh()
+    } else {
+      Swal.fire({
+        title: 'خطا!',
+        text: 'عملیات حذف با خطا مواجه شد.',
+        icon: 'error',
+        confirmButtonText: 'باشه',
+      });
+    }
+  }
+};
+
+
+
   return (
     <div className="p-4 md:p-8 font-shabnam">
       <h1 className="text-2xl md:text-3xl font-medium text-right mb-6">
@@ -32,32 +74,18 @@ const DataTableContacts : React.FC <DataTableProps>=  ({title , contacts}) => {
             </tr>
           </thead>
           <tbody>
-            {/* {comments.map((comment, index) => (
-              <tr key={comment._id} className="odd:bg-white even:bg-gray-50">
-                <td className="py-2 px-4">{index + 1}</td>
-                <td className="py-2 px-4">{comment.username}</td>
-                <td className="py-2 px-4">{comment.body}</td>
-                <td className="py-2 px-4">{comment.email}</td>
-                <td className="py-2 px-4">
-                  <button
-                    onClick={() => handleDelete(comment._id)}
-                    className="bg-red-900 text-white px-3 py-1 rounded w-full hover:bg-red-700 transition"
-                  >
-                    حذف
-                  </button>
-                </td>
-              </tr>
-            ))} */}
+        
             {
               contacts.map((contact , index) => (
                 <tr key={contact._id} className="odd:bg-white even:bg-gray-50">
                 <td className="py-2 px-4">{index + 1}</td>
                 <td className="py-2 px-4">{contact.name}</td>
-                <td className="py-2 px-4">{contact.email}</td>
                 <td className="py-2 px-4">{contact.message}</td>
+                <td className="py-2 px-4">{contact.email}</td>
                 <td className="py-2 px-4">
                   <button
                     // onClick={() => handleDelete(comment._id)}
+                    onClick={() => handleDeleteContact(contact._id)}
                     className="bg-red-900 text-white px-3 py-1 rounded w-full hover:bg-red-700 transition"
                   >
                     حذف
@@ -79,8 +107,8 @@ const DataTableContacts : React.FC <DataTableProps>=  ({title , contacts}) => {
           >
             <div className="flex-1 text-right">
               <p className="font-medium">نام کاربر: {contact.name}</p>
-              <p>متن دیدگاه: {contact.email}</p>
-              <p>ایمیل کاربر: {contact.message}</p>
+              <p>متن دیدگاه: {contact.message}</p>
+              <p>ایمیل کاربر: {contact.email}</p>
             </div>
             <div className="self-start">
               <button
