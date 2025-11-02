@@ -51,7 +51,7 @@ function NavbarResponsive() {
             className="h-6 w-6 cursor-pointer"
             onClick={() => setIsShowSidebar(true)}
           />
-          <div className="flex items-center gap-x-3 text-textcolor">
+          <div className="flex items-center gap-x-3 font-shabnam text-textcolor">
             {user ? (
               <Link href={"login"} className="text-xs ">
                 {user.name}
@@ -61,7 +61,9 @@ function NavbarResponsive() {
                 <PiUserLight className="h-6 w-6" />
               </Link>
             )}
+          <Link href={'/cart'}>
             <PiBagLight className="h-6 w-6" />
+          </Link>
           </div>
         </div>
       </div>

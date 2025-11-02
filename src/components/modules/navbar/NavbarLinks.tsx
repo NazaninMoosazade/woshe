@@ -77,12 +77,14 @@ function NavbarLinks() {
         </div>
 
         {/* آیکون سبد خرید */}
+<Link href={'/cart'}>
         <div className="relative group">
           <PiBagLight className="w-5 h-5 lg:w-7 lg:h-7 cursor-pointer transition-colors duration-200" />
           <div className="absolute top-full left-8 -mt-5 hidden group-hover:flex duration-200 bg-green text-white text-sm font-shabnam px-5 h-6 rounded-md shadow-lg whitespace-nowrap">
             سبد خرید
           </div>
         </div>
+</Link>
       </div>
     </>
   );

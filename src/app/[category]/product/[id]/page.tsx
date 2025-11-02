@@ -56,13 +56,18 @@ const Page = async ({ params }: PageProps) => {
             <TitleProduct name={productData.name} />
             <DescriptionProduct description={productData.description} />
             <PriceProduct price={productData.price} />
-            <AddProduct />
+            <AddProduct
+              id={productData._id}
+              name={productData.name}
+              price={productData.price}
+              img={productData.img}
+            />
             <BoxDetails />
           </div>
         </div>
 
         <div className="mt-28">
-          <Comments comments={commentsData} productID={productData._id} /> 
+          <Comments comments={commentsData} productID={productData._id} />
         </div>
 
         <div className="relative flex items-center my-10">
