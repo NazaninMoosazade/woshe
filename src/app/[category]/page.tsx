@@ -14,7 +14,7 @@ interface PageProps {
   params: { category: string };
 }
 
-// تابع fetch محصولات
+  
 async function getProducts(category: string) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product/${category}`, {
     cache: "no-store",
@@ -24,7 +24,6 @@ async function getProducts(category: string) {
     throw new Error("Failed to fetch products");
   }
 
-  // 👇 این خط خیلی مهمه — داده رو برگردون
   const data = await res.json();
   return data;
 }
@@ -34,7 +33,6 @@ export default async function CategoryPage({ params }: PageProps) {
   let products: ProductType[] = [];
 
   try {
-    // 👇 دقت کن: اگه در route.ts فقط محصولات رو می‌فرستی (بدون data: ...)، این همون آرایه‌ست
     products = await getProducts(category);
     console.log("Fetched products:", products);
   } catch (err) {
