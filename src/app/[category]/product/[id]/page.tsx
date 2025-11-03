@@ -1,18 +1,18 @@
 import React from "react";
 import Navbar from "@/components/modules/navbar/Navbar";
-import TitleBanner from "@/components/tamplates/TitleBanner/TitleBanner";
-import GalleryProduct from "@/components/tamplates/ProductDetails/GalleryProduct";
-import TitleProduct from "@/components/tamplates/ProductDetails/TitleProduct";
-import DescriptionProduct from "@/components/tamplates/ProductDetails/DescriptionProduct";
-import PriceProduct from "@/components/tamplates/ProductDetails/PriceProduct";
+import TitleBanner from "@/components/templates/TitleBanner/TitleBanner";
+import GalleryProduct from "@/components/templates/ProductDetails/GalleryProduct";
+import TitleProduct from "@/components/templates/ProductDetails/TitleProduct";
+import DescriptionProduct from "@/components/templates/ProductDetails/DescriptionProduct";
+import PriceProduct from "@/components/templates/ProductDetails/PriceProduct";
 import Product from "@/models/Product";
 import connectToDB from "@/configs/mongodb";
-import CodeProducts from "@/components/tamplates/ProductDetails/CodeProducts";
-import AddProduct from "@/components/tamplates/ProductDetails/AddProduct";
-import BoxDetails from "@/components/tamplates/ProductDetails/BoxDetails";
+import CodeProducts from "@/components/templates/ProductDetails/CodeProducts";
+import AddProduct from "@/components/templates/ProductDetails/AddProduct";
+import BoxDetails from "@/components/templates/ProductDetails/BoxDetails";
 import Footer from "@/components/modules/footer/Footer";
 import NavbarResponsive from "@/components/modules/navbar/NavbarResponsive";
-import Comments from "@/components/tamplates/ProductDetails/Comments";
+import Comments from "@/components/templates/ProductDetails/Comments";
 import CommentModel from "@/models/Comment";
 
 interface PageProps {
