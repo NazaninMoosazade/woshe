@@ -1,5 +1,5 @@
 import React from 'react'
-import DataTableContacts from '@/components/tamplates/p-admin/DataTableContacts/DataTableContacts.tsx';
+import DataTableContacts from '@/components/templates/p-admin/DataTableContacts/DataTableContacts.tsx';
 import Contact from '@/models/Contact.ts';
  import connectToDB from "@/configs/mongodb";
 
