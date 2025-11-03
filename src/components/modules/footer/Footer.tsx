@@ -10,20 +10,20 @@ function Footer() {
             {/* ستون‌ها */}
             <div className="flex flex-col text-right space-y-2 pt-8 sm:pt-5 mx-auto pr-4">
               <h1 className="text-green">دسترسی سریع</h1>
-              <Link className="font-light hover:text-textHover" href="bouquets">
+              <Link className="font-light hover:text-textHover" href="/category/bouquets">
                 دسته گل
               </Link>
-              <Link className="font-light hover:text-textHover" href="trends">
+              <Link className="font-light hover:text-textHover" href="/category/trends">
                 ترند وشه
               </Link>
-              <Link className="font-light hover:text-textHover" href="pastries">
+              <Link className="font-light hover:text-textHover" href="/category/pastries">
                 کیک و بادکنک
               </Link>
             </div>
 
             <div className="flex flex-col text-right space-y-2 pt-8 sm:pt-5 mx-auto pr-4">
               <h1 className="text-green">حساب کاربری</h1>
-              <Link className="font-light hover:text-textHover" href="register">
+              <Link className="font-light hover:text-textHover" href="/register">
                 ورود / ثبت نام
               </Link>
  
@@ -33,10 +33,10 @@ function Footer() {
 
             <div className="flex flex-col text-right space-y-2 pt-8 sm:pt-5 mx-auto pr-4">
               <h1 className="text-green">استودیو گل وشه</h1>
-              <Link className="font-light hover:text-textHover" href="contact">
+              <Link className="font-light hover:text-textHover" href="/contact">
                 تماس با وشه
               </Link>
-              <Link className="font-light hover:text-textHover" href="trends">
+              <Link className="font-light hover:text-textHover" href="/category/trends">
                 ترند وشه
               </Link>
 

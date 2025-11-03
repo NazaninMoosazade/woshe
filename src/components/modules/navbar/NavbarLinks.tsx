@@ -64,9 +64,9 @@ function NavbarLinks() {
         {/* آیکون کاربر */}
         <div className="relative group text-xs xl:text-sm">
           {user ? (
-            <Link href={"login"} className="text-xs xl:text-sm">{user.name}</Link>
+            <Link href={"/login"} className="text-xs xl:text-sm">{user.name}</Link>
           ) : (
-            <Link href={"login"}>
+            <Link href={"/login"}>
               <PiUserLight className="w-5 h-5 lg:w-7 lg:h-7 cursor-pointer transition-colors duration-200" />
 
               <div className="absolute top-full left-8 hidden -mt-5 group-hover:flex duration-200 bg-green text-white text-sm font-shabnam px-5 h-6 rounded-md shadow-lg whitespace-nowrap">

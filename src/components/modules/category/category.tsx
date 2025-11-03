@@ -12,37 +12,37 @@ const categories: CategoryType[] = [
   {
     name: "ترند وشه",
     subtitle: "WOSHE TRENDS",
-    href: "/trends",
+    href: "/category/trends",
     image: "/img/trend.png",
   },
   {
     name: "باکس VIP",
     subtitle: "VIP BOX",
-    href: "/vipBox",
+    href: "/category/vipBox",
     image: "/img/boxvip.png",
   },
   {
     name: "دسته گل vip",
     subtitle: "VIP BOUQUETS",
-    href: "/vipBouquets",
+    href: "/category/vipBouquets",
     image: "/img/vipp.png",
   },
   {
     name: "دسته گل ها",
     subtitle: "BOUQUETS",
-    href: "/bouquets",
+    href: "/category/bouquets",
     image: "/img/bouquets.png",
   },
   {
     name: "کیک و بادکنک",
     subtitle: "PASTRIES",
-    href: "/pastries",
+    href: "/category/pastries",
     image: "/img/pastries.png",
   },
   {
     name: "دسته گل عروس",
     subtitle: "BRIDAL BOUQUETS",
-    href: "/bridal",
+    href: "/category/bridal",
     image: "/img/bridal.png",
   },
 ];

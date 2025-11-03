@@ -36,7 +36,7 @@ const DataTableComments: React.FC<DataTableProps> = ({ title, comments }) => {
 
     if (res.ok) {
       await swal("کامنت با موفقیت حذف شد ✅", { icon: "success" });
-      router.refresh(); // رفرش صفحه برای نمایش داده‌های جدید
+      router.refresh(); 
     } else {
       const data = await res.json();
       swal(data.message || "خطا در حذف کامنت", { icon: "error" });
