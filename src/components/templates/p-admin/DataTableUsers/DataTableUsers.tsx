@@ -84,7 +84,7 @@ const DataTableUsers: React.FC<DataTableProps> = ({ title, users }) => {
       {/* Title */}
       <div className="mt-8 font-shabnam font-bold text-right px-4">
         <h1 className="inline-block text-2xl">
-          <span>{title}</span>
+          <span className="text-2xl md:text-3xl font-shabnam font-medium text-right">{title}</span>
         </h1>
       </div>
 

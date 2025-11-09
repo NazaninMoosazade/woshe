@@ -57,7 +57,7 @@ const handleDeleteContact = async (id: string) => {
 
   return (
     <div className="p-4 md:p-8 font-shabnam">
-      <h1 className="text-2xl md:text-3xl font-medium text-right mb-6">
+      <h1 className="text-2xl md:text-3xl font-shabnam font-medium text-right mb-6">
         {title}
       </h1>
 

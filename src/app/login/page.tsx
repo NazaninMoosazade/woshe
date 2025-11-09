@@ -29,7 +29,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     if (!phoneOrEmail.trim() || !password.trim()) {
-      showSwal("خطا!", "تمام فیلدها الزامی هستند.", "error");
+      showSwal("تمام فیلدها الزامی هستند.", "error" , 'خطا !');
       return;
     }
 
@@ -46,7 +46,7 @@ export default function LoginPage() {
       const data: LoginResponse = await res.json();
 
       if (!res.ok) {
-        showSwal(data.message || "شماره تلفن یا رمز عبور صحیح نیست", "error", "تلاش مجدد");
+        showSwal( " ایمیل یا رمز عبور صحیح نیست", "error", "تلاش مجدد");
         setLoading(false);
         return;
       }

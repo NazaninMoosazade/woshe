@@ -13,9 +13,9 @@ const Comment = ({ username, body, date }: CommentProps) => {
   return (
     <section className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-6 font-shabnam">
       {/* آواتار */}
-      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center text-lg font-bold">
-        {username.charAt(0).toUpperCase()}
-      </div>
+      {/* <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center text-lg font-bold">
+    {username ? username.toUpperCase() : "?"}
+      </div> */}
 
       {/* محتویات کامنت */}
       <div className="flex-1 bg-white shadow-md rounded-xl p-4">

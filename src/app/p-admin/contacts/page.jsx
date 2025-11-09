@@ -15,7 +15,7 @@ const page = async () => {
   contacts.langth === 0 ? (
     <h1>در حال حاضر مخاطبی وجود ندارد</h1>
   ) : (
-    <DataTableContacts contacts={JSON.parse(JSON.stringify(contacts))}/>
+    <DataTableContacts title={'لیست مخاطبان'} contacts={JSON.parse(JSON.stringify(contacts))}/>
   )
 }
 
